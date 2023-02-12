@@ -184,7 +184,7 @@ WeatherProvider.register("weathergov", {
 			weather.tempUnits = forecast.temperatureUnit;
 			// use the forecast isDayTime attribute to help build the weatherType label
 			weather.weatherType = this.convertWeatherType(forecast.shortForecast, forecast.isDaytime);
-			weather.precipProb = forecast.probabilityOfPrecipitation.value;
+			weather.precipitationProb = forecast.probabilityOfPrecipitation;
 
 			days.push(weather);
 
@@ -214,6 +214,7 @@ WeatherProvider.register("weathergov", {
 		currentWeather.rain = null;
 		currentWeather.snow = null;
 		currentWeather.precipitation = this.convertLength(currentWeatherData.precipitationLastHour.value);
+		currentWeather.precipitationProb = this.convertLength(currentWeatherData.precipitationProb.value);
 		if (currentWeatherData.heatIndex.value !== null) {
 			currentWeather.feelsLikeTemp = currentWeatherData.heatIndex.value;
 		} else if (currentWeatherData.windChill.value !== null) {
