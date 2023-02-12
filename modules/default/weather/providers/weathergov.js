@@ -184,6 +184,7 @@ WeatherProvider.register("weathergov", {
 			weather.tempUnits = forecast.temperatureUnit;
 			// use the forecast isDayTime attribute to help build the weatherType label
 			weather.weatherType = this.convertWeatherType(forecast.shortForecast, forecast.isDaytime);
+			weather.precipProb = forecast.probabilityOfPrecipitation.value;
 
 			days.push(weather);
 
