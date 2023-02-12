@@ -33,6 +33,17 @@
                         </td>
                     {% endif %}
                 {% endif %}
+                
+                {% if config.showPrecipitationProb %}
+                        <td class="align-right bright precipitation">
+                            {{ f.precipProb }}
+                        </td>
+		                {% else %}
+                        <td class="align-right bright precipitation">
+                            {{ f.precipProb }}
+                        </td>
+                    {% endif %}
+                {% endif %}
             </tr>
             {% set currentStep = currentStep + 1 %}
         {% endfor %}
